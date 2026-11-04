@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veille - Walid Hamzaoui</title>
+    <style>
+        :root { --bg-color: #080808; --primary-orange: #ff6600; --text-light: #ffffff; --text-muted: #888888; }
+        body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg-color); color: var(--text-light); }
+        header { background-color: rgba(8, 8, 8, 0.9); backdrop-filter: blur(10px); display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; position: fixed; top: 0; width: 100%; box-sizing: border-box; z-index: 1000; border-bottom: 1px solid rgba(255, 102, 0, 0.2); }
+        .logo { font-size: 22px; font-weight: 800; letter-spacing: 1px; }
+        .logo span { color: var(--primary-orange); font-weight: 400; }
+        nav ul { list-style: none; display: flex; margin: 0; padding: 0; }
+        nav ul li { margin: 0 15px; }
+        nav ul li a { color: var(--text-muted); text-decoration: none; font-size: 14px; font-weight: 600; text-transform: uppercase; transition: color 0.3s ease; }
+        nav ul li a:hover { color: var(--primary-orange); }
+        section { padding: 120px 10% 50px 10%; min-height: 80vh; }
+        .section-title { font-size: 36px; margin-bottom: 30px; border-left: 4px solid var(--primary-orange); padding-left: 15px; }
+        
+        .veille-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .veille-article { background: #1a1a1a; border-radius: 12px; padding: 25px; border-top: 2px solid #333; transition: all 0.3s ease; }
+        .veille-article:hover { border-top-color: var(--primary-orange); transform: translateY(-5px); }
+        .veille-article h4 { margin: 0 0 10px 0; font-size: 18px; }
+        .tag { background: rgba(255, 102, 0, 0.1); color: var(--primary-orange); padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; margin-right: 10px; display: inline-block; margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">WALID<span>.TECH</span></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="epreuve-e5.html">Epreuve E5</a></li>
+                <li><a href="epreuve-e6.html">Epreuve E6</a></li>
+                <li><a href="entreprise.html">Entreprise</a></li>
+                <li><a href="veille.html">Veille Technologique</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2 class="section-title">Veille Technologique</h2>
+        <p style="color: var(--text-muted); margin-bottom: 40px; font-size: 18px;">Thème principal : <strong>Hardware nouvelle génération & Cybersécurité</strong></p>
+        
+        <div class="veille-grid">
+            <div class="veille-article">
+                <span class="tag">HARDWARE</span>
+                <h4>L'impact des processeurs 3D V-Cache</h4>
+                <p style="color: var(--text-muted); font-size: 14px; line-height: 1.5;">Analyse de l'architecture des processeurs (ex: Ryzen 7 7800X3D) et adoption de la DDR5 pour des performances extrêmes.</p>
+            </div>
+            <div class="veille-article">
+                <span class="tag">CYBER</span>
+                <h4>Hardening Active Directory</h4>
+                <p style="color: var(--text-muted); font-size: 14px; line-height: 1.5;">Suivi des failles récentes sur Windows Server et mise en place des bonnes pratiques de durcissement (Hardening).</p>
+            </div>
+            <div class="veille-article">
+                <span class="tag">IA</span>
+                <h4>L'Automatisation dans le Support IT</h4>
+                <p style="color: var(--text-muted); font-size: 14px; line-height: 1.5;">Comment l'intelligence artificielle révolutionne la gestion des tickets (Niveau 1) et le monitoring des infrastructures.</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
