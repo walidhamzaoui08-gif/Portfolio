@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Walid Hamzaoui</title>
     <style>
-        /* Couleurs de base : Noir profond et Orange Iris */
+        /* Couleurs de base : Noir et Orange Iris */
         :root {
-            --bg-color: #0d0d0d; /* Noir profond */
-            --header-bg: #1a1a1a; /* Noir légèrement plus clair */
-            --primary-orange: #ff6600; /* Orange Iris éclatant */
-            --text-light: #f0f0f0; /* Texte blanc/gris clair */
-            --text-muted: #a0a0a0; /* Texte secondaire */
+            --bg-color: #050505; 
+            --header-bg: #111111;
+            --primary-orange: #ff6600; 
+            --card-bg: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            --text-light: #ffffff; 
+            --text-muted: #a0a0a0; 
         }
 
         body {
@@ -28,17 +29,17 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 40px;
-            border-bottom: 2px solid var(--primary-orange);
-            box-shadow: 0 4px 15px rgba(255, 102, 0, 0.15);
+            border-bottom: 1px solid #333;
         }
 
         .logo {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: bold;
         }
 
         .logo span {
             color: var(--primary-orange);
+            font-weight: normal;
         }
 
         nav ul {
@@ -55,7 +56,7 @@
         nav ul li a {
             color: var(--text-light);
             text-decoration: none;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 500;
             transition: color 0.3s ease;
         }
@@ -64,97 +65,103 @@
             color: var(--primary-orange);
         }
 
-        /* Section Accueil */
+        /* Section Accueil - Style Carte */
         .hero-section {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 100px 10%;
-            min-height: 70vh;
-        }
-
-        .hero-content {
-            max-width: 60%;
-        }
-
-        .hero-content h1 {
-            font-size: 52px;
-            margin-bottom: 10px;
-        }
-
-        .hero-content h1 span {
-            color: var(--primary-orange);
-        }
-
-        .hero-content h2 {
-            font-size: 26px;
-            font-weight: 400;
-            color: var(--text-muted);
-            margin-bottom: 25px;
-        }
-
-        .hero-content p {
-            font-size: 18px;
-            line-height: 1.6;
-            margin-bottom: 40px;
-            color: #cccccc;
-        }
-
-        /* Boutons */
-        .btn-primary, .btn-secondary {
-            display: inline-block;
-            padding: 14px 28px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-right: 20px;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary {
-            background-color: var(--primary-orange);
-            color: #000;
-            border: 2px solid var(--primary-orange);
-        }
-
-        .btn-primary:hover {
-            background-color: transparent;
-            color: var(--primary-orange);
-            box-shadow: 0 0 15px rgba(255, 102, 0, 0.4);
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--primary-orange);
-            border: 2px solid var(--primary-orange);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--primary-orange);
-            color: #000;
-            box-shadow: 0 0 15px rgba(255, 102, 0, 0.4);
-        }
-
-        /* Espace Photo de profil */
-        .photo-placeholder {
-            width: 320px;
-            height: 320px;
-            background: linear-gradient(135deg, #ff6600, #cc3300);
-            border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 24px;
+            padding: 60px 20px;
+            min-height: 70vh;
+        }
+
+        .hero-card {
+            background: var(--card-bg);
+            border: 1px solid #333;
+            border-radius: 20px; /* Coins arrondis comme sur ton image */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px 70px;
+            max-width: 1000px;
+            width: 100%;
+            box-shadow: 0 15px 35px rgba(255, 102, 0, 0.05); /* Léger reflet orange */
+        }
+
+        .hero-text {
+            max-width: 55%;
+        }
+
+        .hero-text h1 {
+            font-size: 55px;
+            margin: 0 0 10px 0;
+            line-height: 1.1;
+        }
+
+        .hero-text h2 {
+            font-size: 22px;
+            font-weight: normal;
+            margin: 0 0 20px 0;
+        }
+
+        .hero-text .status {
+            color: var(--text-muted);
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .hero-text .job {
+            color: var(--primary-orange);
+            font-size: 18px;
             font-weight: bold;
-            color: #000;
-            box-shadow: 0 0 30px rgba(255, 102, 0, 0.25);
-            border: 4px solid #1a1a1a;
+            margin-bottom: 30px;
+        }
+
+        /* Boutons arrondis (Pills) */
+        .buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-pill {
+            display: inline-block;
+            padding: 10px 25px;
+            border-radius: 50px; /* Boutons en forme de pilule */
+            border: 1px solid #fff;
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-pill:hover {
+            border-color: var(--primary-orange);
+            color: var(--primary-orange);
+            background-color: rgba(255, 102, 0, 0.05);
+        }
+
+        /* Photo circulaire */
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .photo-circle {
+            width: 280px;
+            height: 280px;
+            background-color: #222;
+            border-radius: 50%;
+            border: 4px solid #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #555;
+            font-size: 18px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Menu de navigation -->
     <header>
         <div class="logo">Walid HAMZAOUI <span>SIO SISR</span></div>
         <nav>
@@ -168,17 +175,25 @@
         </nav>
     </header>
 
-    <!-- Section Accueil -->
     <section id="accueil" class="hero-section">
-        <div class="hero-content">
-            <h1>Bonjour, je suis <span>Walid</span></h1>
-            <h2>Étudiant en BTS SIO - Option SISR</h2>
-            <p>Passionné par l'infrastructure réseau, l'administration système (Active Directory, Linux) et la sécurité informatique. Je suis actuellement à la recherche d'une alternance pour mettre mon dynamisme et mes compétences techniques au service du support et de l'évolution de votre SI.</p>
-            <a href="#contact" class="btn-primary">Me contacter</a>
-            <a href="#" class="btn-secondary">Télécharger mon CV</a>
-        </div>
-        <div class="hero-image">
-            <div class="photo-placeholder">Photo de Walid</div>
+        <div class="hero-card">
+            <div class="hero-text">
+                <h1>Walid<br>HAMZAOUI</h1>
+                <h2>Étudiant en BTS SIO SISR</h2>
+                
+                <div class="status">À la recherche d'une alternance</div>
+                <div class="job">Support Informatique & Systèmes</div>
+                
+                <div class="buttons">
+                    <a href="#profil" class="btn-pill">Profil</a>
+                    <a href="#certification" class="btn-pill">Certification</a>
+                    <a href="#contact" class="btn-pill">Contacter</a>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <div class="photo-circle">Photo à venir</div>
+            </div>
         </div>
     </section>
 
