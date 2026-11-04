@@ -82,4 +82,299 @@
         .section-title {
             font-size: 36px;
             margin-bottom: 50px;
-            border-
+            border-left: 4px solid var(--primary-orange);
+            padding-left: 15px;
+        }
+
+        /* --- Section Accueil --- */
+        #accueil {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 100vh;
+            background-image: radial-gradient(circle at 50% 30%, #1a0a00 0%, #080808 70%);
+        }
+
+        .bio-content {
+            max-width: 800px;
+        }
+
+        .bio-content h1 {
+            font-size: 75px;
+            margin: 0 0 10px 0;
+            text-shadow: 0 0 30px var(--orange-glow);
+            letter-spacing: -1px;
+        }
+
+        .bio-content h2 {
+            font-size: 24px;
+            color: var(--primary-orange);
+            margin-top: 0;
+            letter-spacing: 1px;
+        }
+
+        .signature {
+            font-size: 22px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text-light);
+            margin-top: 30px;
+            border-left: 2px solid #333;
+            padding-left: 20px;
+        }
+
+        .signature span {
+            color: var(--primary-orange);
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        /* --- Section Profil & Compétences --- */
+        #profil {
+            background-color: var(--section-bg);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-category {
+            background: #1a1a1a;
+            padding: 30px;
+            border-radius: 12px;
+            border-top: 3px solid var(--primary-orange);
+        }
+
+        .skill-category h3 { margin-top: 0; color: #fff; }
+        .skill-category ul { list-style: none; padding: 0; color: var(--text-muted); line-height: 2; }
+        .skill-category ul li::before { content: "▹"; color: var(--primary-orange); margin-right: 10px; }
+
+        /* --- Section Projets & Experiences --- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .project-card {
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 30px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-orange);
+            box-shadow: 0 10px 30px rgba(255, 102, 0, 0.1);
+        }
+
+        .tag {
+            background: rgba(255, 102, 0, 0.1);
+            color: var(--primary-orange);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-right: 10px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        /* --- NOUVEAU : Sections pour correspondre aux onglets exacts --- */
+        #epreuve-e5, #entreprise {
+            background-color: var(--section-bg);
+        }
+
+        .epreuve-card {
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .epreuve-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 4px; height: 100%;
+            background: var(--primary-orange);
+        }
+
+        .epreuve-card h3 { font-size: 24px; margin-top: 0; }
+
+        .exp-item {
+            display: flex;
+            background: #1a1a1a;
+            border-radius: 12px;
+            padding: 30px;
+            border-left: 4px solid #444;
+            margin-bottom: 20px;
+            transition: border-color 0.3s;
+        }
+
+        .exp-item:hover { border-color: var(--primary-orange); }
+        .exp-date { min-width: 150px; color: var(--primary-orange); font-weight: bold; }
+        .exp-details h3 { margin: 0 0 10px 0; }
+        .exp-details p { color: var(--text-muted); margin: 0; line-height: 1.6; }
+
+        /* --- Section Veille --- */
+        .veille-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .veille-article {
+            background: #1a1a1a;
+            border-radius: 12px;
+            padding: 25px;
+            border-top: 2px solid #333;
+            transition: all 0.3s ease;
+        }
+
+        .veille-article:hover { border-top-color: var(--primary-orange); transform: translateY(-5px); }
+        .veille-article h4 { margin: 0 0 10px 0; font-size: 18px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">WALID<span>.TECH</span></div>
+        <nav>
+            <ul>
+                <!-- ONGLETS STRICTEMENT IDENTIQUES A LA CONSIGNE DU PROF -->
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#epreuve-e5">Epreuve E5</a></li>
+                <li><a href="#epreuve-e6">Epreuve E6</a></li>
+                <li><a href="#entreprise">Entreprise</a></li>
+                <li><a href="#veille">Veille Technologique</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- SECTION ACCUEIL -->
+    <section id="accueil">
+        <div class="bio-content">
+            <h1>Walid Hamzaoui</h1>
+            <h2>Apprenti Technicien Systèmes et Réseaux</h2>
+            
+            <!-- LA NOUVELLE SIGNATURE DIRECTE ET PERCUTANTE -->
+            <p class="signature">
+                " Passionné par l'<span>automatisation</span>, l'<span>Intelligence Artificielle</span>, la <span>cybersécurité</span> et l'évolution constante de l'univers <span>numérique</span>. "
+            </p>
+        </div>
+    </section>
+
+    <!-- TES COMPETENCES ET PROJETS RESTENT DANS LA PAGE (Le prof les verra en scrollant, c'est du bonus qui impressionne) -->
+    <section id="profil">
+        <h2 class="section-title">Mes Compétences & Projets</h2>
+        <div class="skills-grid" style="margin-bottom: 50px;">
+            <div class="skill-category">
+                <h3>Support & Systèmes</h3>
+                <ul>
+                    <li>Installation de postes (Windows, macOS)</li>
+                    <li>Diagnostic et résolution de pannes (Niveau 1 et 2)</li>
+                    <li>Maîtrise de Microsoft 365 / Google Workspace</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Réseaux & Sécurité</h3>
+                <ul>
+                    <li>Analyse et résolution des incidents réseau</li>
+                    <li>Adressage IP et routage</li>
+                    <li>Bases de données (CMD, SQL)</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Développement</h3>
+                <ul>
+                    <li>Python (Création de scripts et logique)</li>
+                    <li>HTML / CSS (Intégration web et design)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="projects-grid">
+            <div class="project-card">
+                <span class="tag">PYTHON</span>
+                <h3>Script Puissance 4</h3>
+                <p style="color: var(--text-muted); line-height: 1.6;">Développement d'un jeu complet en console avec logique de victoire et mode multijoueur.</p>
+            </div>
+            <div class="project-card">
+                <span class="tag">HTML / CSS</span>
+                <h3>Site web "Verisure"</h3>
+                <p style="color: var(--text-muted); line-height: 1.6;">Création d'un site vitrine avec structuration HTML et conception graphique CSS sur mesure.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION EPREUVE E5 -->
+    <section id="epreuve-e5">
+        <h2 class="section-title">Epreuve E5</h2>
+        <div class="epreuve-card">
+            <h3>Production et fourniture de services</h3>
+            <p style="color: var(--text-muted); line-height: 1.7;">Cette épreuve évalue la capacité à répondre aux demandes des utilisateurs et à gérer le patrimoine informatique. J'y documenterai mes interventions de support, la préparation des postes de travail et la résolution d'incidents utilisateurs liés au réseau et aux systèmes d'exploitation.</p>
+        </div>
+    </section>
+
+    <!-- SECTION EPREUVE E6 -->
+    <section id="epreuve-e6">
+        <h2 class="section-title">Epreuve E6</h2>
+        <div class="epreuve-card">
+            <h3>Cybersécurité et Infrastructure (SISR)</h3>
+            <p style="color: var(--text-muted); line-height: 1.7;">L'épreuve majeure de la spécialité SISR. Elle se concentre sur la conception, la sécurisation et l'évolution d'une infrastructure. Je mettrai en avant mes projets sur Windows Server, la gestion de l'Active Directory, les stratégies de groupe (GPO) et la sécurisation globale d'un système d'information.</p>
+        </div>
+    </section>
+
+    <!-- SECTION ENTREPRISE -->
+    <section id="entreprise">
+        <h2 class="section-title">Entreprise & Expériences</h2>
+        <div class="exp-item">
+            <div class="exp-date">2026 - Présent</div>
+            <div class="exp-details">
+                <h3>Orga & Tactique - Parties d'Airsoft</h3>
+                <p>Travail en équipe et exécution rigoureuse des consignes. Gestion du terrain, annonce des règles de sécurité et vérification stricte du matériel.</p>
+            </div>
+        </div>
+        <div class="exp-item">
+            <div class="exp-date">2023 - Présent</div>
+            <div class="exp-details">
+                <h3>Gestionnaire e-commerce (Vinted)</h3>
+                <p>Gestion autonome de la logistique et du service client. Plus de 115 transactions avec une note de 4.7/5. Optimisation et gestion des litiges.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION VEILLE -->
+    <section id="veille">
+        <h2 class="section-title">Veille Technologique</h2>
+        <p style="color: var(--text-muted); margin-bottom: 40px; font-size: 18px;">Thème principal : <strong>Hardware nouvelle génération & Cybersécurité</strong></p>
+        
+        <div class="veille-grid">
+            <div class="veille-article">
+                <span class="tag">HARDWARE</span>
+                <h4>L'impact des processeurs 3D V-Cache</h4>
+                <p style="color: var(--text-muted); font-size: 14px; line-height: 1.5;">Analyse de l'architecture des processeurs (ex: Ryzen 7 7800X3D) et adoption de la DDR5 pour des performances extrêmes.</p>
+            </div>
+            <div class="veille-article">
+                <span class="tag">CYBER</span>
+                <h4>Hardening Active Directory</h4>
+                <p style="color: var(--text-muted); font-size: 14px; line-height: 1.5;">Suivi des failles récentes sur Windows Server et mise en place des bonnes pratiques de durcissement (Hardening).</p>
+            </div>
+            <div class="veille-article">
+                <span class="tag">IA</span>
+                <h4>L'Automatisation dans le Support IT</h4>
+                <p style="color: var(--text-muted); font-size: 14px; line-height: 1.5;">Comment l'intelligence artificielle révolutionne la gestion des tickets (Niveau 1) et le monitoring des infrastructures.</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
