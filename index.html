@@ -5,50 +5,156 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Walid Hamzaoui</title>
     <style>
+        /* Couleurs de base : Noir profond et Orange Iris */
+        :root {
+            --bg-color: #0d0d0d; /* Noir profond */
+            --header-bg: #1a1a1a; /* Noir légèrement plus clair */
+            --primary-orange: #ff6600; /* Orange Iris éclatant */
+            --text-light: #f0f0f0; /* Texte blanc/gris clair */
+            --text-muted: #a0a0a0; /* Texte secondaire */
+        }
+
         body {
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #1a1a2e; 
+            background-color: var(--bg-color);
+            color: var(--text-light);
         }
+
+        /* Barre de navigation */
         header {
-            background-color: #16213e; 
+            background-color: var(--header-bg);
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 40px;
-            color: white;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-bottom: 2px solid var(--primary-orange);
+            box-shadow: 0 4px 15px rgba(255, 102, 0, 0.15);
         }
+
         .logo {
             font-size: 24px;
             font-weight: bold;
         }
+
         .logo span {
-            color: #4361ee; 
-            font-weight: normal;
+            color: var(--primary-orange);
         }
+
         nav ul {
             list-style: none;
             display: flex;
             margin: 0;
             padding: 0;
         }
+
         nav ul li {
             margin-left: 30px;
         }
+
         nav ul li a {
-            color: white;
+            color: var(--text-light);
             text-decoration: none;
             font-size: 16px;
             font-weight: 500;
             transition: color 0.3s ease;
         }
+
         nav ul li a:hover {
-            color: #4361ee;
+            color: var(--primary-orange);
+        }
+
+        /* Section Accueil */
+        .hero-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 100px 10%;
+            min-height: 70vh;
+        }
+
+        .hero-content {
+            max-width: 60%;
+        }
+
+        .hero-content h1 {
+            font-size: 52px;
+            margin-bottom: 10px;
+        }
+
+        .hero-content h1 span {
+            color: var(--primary-orange);
+        }
+
+        .hero-content h2 {
+            font-size: 26px;
+            font-weight: 400;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            color: #cccccc;
+        }
+
+        /* Boutons */
+        .btn-primary, .btn-secondary {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-right: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-orange);
+            color: #000;
+            border: 2px solid var(--primary-orange);
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--primary-orange);
+            box-shadow: 0 0 15px rgba(255, 102, 0, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary-orange);
+            border: 2px solid var(--primary-orange);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary-orange);
+            color: #000;
+            box-shadow: 0 0 15px rgba(255, 102, 0, 0.4);
+        }
+
+        /* Espace Photo de profil */
+        .photo-placeholder {
+            width: 320px;
+            height: 320px;
+            background: linear-gradient(135deg, #ff6600, #cc3300);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #000;
+            box-shadow: 0 0 30px rgba(255, 102, 0, 0.25);
+            border: 4px solid #1a1a1a;
         }
     </style>
 </head>
 <body>
+
+    <!-- Menu de navigation -->
     <header>
         <div class="logo">Walid HAMZAOUI <span>SIO SISR</span></div>
         <nav>
@@ -61,5 +167,20 @@
             </ul>
         </nav>
     </header>
+
+    <!-- Section Accueil -->
+    <section id="accueil" class="hero-section">
+        <div class="hero-content">
+            <h1>Bonjour, je suis <span>Walid</span></h1>
+            <h2>Étudiant en BTS SIO - Option SISR</h2>
+            <p>Passionné par l'infrastructure réseau, l'administration système (Active Directory, Linux) et la sécurité informatique. Je suis actuellement à la recherche d'une alternance pour mettre mon dynamisme et mes compétences techniques au service du support et de l'évolution de votre SI.</p>
+            <a href="#contact" class="btn-primary">Me contacter</a>
+            <a href="#" class="btn-secondary">Télécharger mon CV</a>
+        </div>
+        <div class="hero-image">
+            <div class="photo-placeholder">Photo de Walid</div>
+        </div>
+    </section>
+
 </body>
 </html>
