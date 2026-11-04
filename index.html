@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Walid Hamzaoui</title>
     <style>
-        /* Couleurs de base : Noir et Orange Iris */
         :root {
-            --bg-color: #050505; 
+            --bg-color: #080808; 
             --header-bg: #111111;
             --primary-orange: #ff6600; 
-            --card-bg: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            --orange-glow: rgba(255, 102, 0, 0.3);
             --text-light: #ffffff; 
-            --text-muted: #a0a0a0; 
+            --text-muted: #888888; 
         }
 
         body {
@@ -20,26 +19,27 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-light);
+            background-image: radial-gradient(circle at 50% 0%, #1a0a00 0%, #080808 70%);
         }
 
         /* Barre de navigation */
         header {
-            background-color: var(--header-bg);
+            background-color: transparent;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 40px;
-            border-bottom: 1px solid #333;
+            padding: 25px 50px;
         }
 
         .logo {
-            font-size: 20px;
-            font-weight: bold;
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 1px;
         }
 
         .logo span {
             color: var(--primary-orange);
-            font-weight: normal;
+            font-weight: 400;
         }
 
         nav ul {
@@ -47,17 +47,23 @@
             display: flex;
             margin: 0;
             padding: 0;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 10px 25px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         nav ul li {
-            margin-left: 30px;
+            margin: 0 15px;
         }
 
         nav ul li a {
-            color: var(--text-light);
+            color: var(--text-muted);
             text-decoration: none;
-            font-size: 15px;
-            font-weight: 500;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             transition: color 0.3s ease;
         }
 
@@ -65,135 +71,163 @@
             color: var(--primary-orange);
         }
 
-        /* Section Accueil - Style Carte */
+        /* Nouvelle Section Accueil - Originale */
         .hero-section {
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 60px 20px;
-            min-height: 70vh;
+            min-height: 75vh;
+            padding: 0 50px;
         }
 
-        .hero-card {
-            background: var(--card-bg);
-            border: 1px solid #333;
-            border-radius: 20px; /* Coins arrondis comme sur ton image */
+        .profile-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 50px 70px;
-            max-width: 1000px;
+            max-width: 1100px;
             width: 100%;
-            box-shadow: 0 15px 35px rgba(255, 102, 0, 0.05); /* Léger reflet orange */
+            gap: 50px;
         }
 
-        .hero-text {
-            max-width: 55%;
+        .bio-content {
+            flex: 1;
         }
 
-        .hero-text h1 {
-            font-size: 55px;
-            margin: 0 0 10px 0;
-            line-height: 1.1;
-        }
-
-        .hero-text h2 {
-            font-size: 22px;
-            font-weight: normal;
-            margin: 0 0 20px 0;
-        }
-
-        .hero-text .status {
-            color: var(--text-muted);
-            font-size: 16px;
-            margin-bottom: 5px;
-        }
-
-        .hero-text .job {
-            color: var(--primary-orange);
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 30px;
-        }
-
-        /* Boutons arrondis (Pills) */
-        .buttons {
-            display: flex;
-            gap: 15px;
-        }
-
-        .btn-pill {
+        .tech-badge {
             display: inline-block;
-            padding: 10px 25px;
-            border-radius: 50px; /* Boutons en forme de pilule */
-            border: 1px solid #fff;
-            color: #fff;
-            text-decoration: none;
+            color: var(--primary-orange);
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            border-left: 3px solid var(--primary-orange);
+            padding-left: 10px;
+        }
+
+        .bio-content h1 {
+            font-size: 65px;
+            margin: 0 0 15px 0;
+            line-height: 1;
+            text-shadow: 0 0 30px var(--orange-glow);
+        }
+
+        .bio-content .description {
+            font-size: 18px;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 35px;
+            max-width: 90%;
+        }
+
+        .bio-content .description strong {
+            color: var(--text-light);
+        }
+
+        /* Tags de compétences et passions */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .skill-tag {
+            background: rgba(255, 102, 0, 0.05);
+            border: 1px solid rgba(255, 102, 0, 0.2);
+            color: var(--text-light);
+            padding: 8px 16px;
+            border-radius: 8px;
             font-size: 14px;
             transition: all 0.3s ease;
         }
 
-        .btn-pill:hover {
-            border-color: var(--primary-orange);
+        .skill-tag:hover {
+            background: var(--primary-orange);
+            color: #000;
+            box-shadow: 0 0 15px var(--orange-glow);
+            transform: translateY(-2px);
+        }
+
+        /* Zone visuelle droite (Abstraite) */
+        .visual-content {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            position: relative;
+        }
+
+        .abstract-frame {
+            width: 350px;
+            height: 450px;
+            border: 2px solid rgba(255, 102, 0, 0.3);
+            border-radius: 20px;
+            position: relative;
+            background: linear-gradient(180deg, rgba(255,102,0,0.1) 0%, transparent 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .abstract-frame::before {
+            content: '';
+            position: absolute;
+            top: 20px; left: 20px; right: 20px; bottom: 20px;
+            border: 1px dashed rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .frame-text {
             color: var(--primary-orange);
-            background-color: rgba(255, 102, 0, 0.05);
-        }
-
-        /* Photo circulaire */
-        .hero-image {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .photo-circle {
-            width: 280px;
-            height: 280px;
-            background-color: #222;
-            border-radius: 50%;
-            border: 4px solid #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #555;
-            font-size: 18px;
+            font-family: monospace;
+            font-size: 14px;
+            letter-spacing: 2px;
+            opacity: 0.7;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">Walid HAMZAOUI <span>SIO SISR</span></div>
+        <div class="logo">WALID<span>.TECH</span></div>
         <nav>
             <ul>
                 <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#projets">Projets</a></li>
                 <li><a href="#epreuve-e5">Epreuve E5</a></li>
                 <li><a href="#epreuve-e6">Epreuve E6</a></li>
-                <li><a href="#entreprise">Entreprise</a></li>
-                <li><a href="#veille">Veille Technologique</a></li>
+                <li><a href="#veille">Veille</a></li>
             </ul>
         </nav>
     </header>
 
     <section id="accueil" class="hero-section">
-        <div class="hero-card">
-            <div class="hero-text">
-                <h1>Walid<br>HAMZAOUI</h1>
-                <h2>Étudiant en BTS SIO SISR</h2>
+        <div class="profile-container">
+            
+            <div class="bio-content">
+                <div class="tech-badge">Infrastructure & Hardware</div>
+                <h1>Walid<br>Hamzaoui</h1>
                 
-                <div class="status">À la recherche d'une alternance</div>
-                <div class="job">Support Informatique & Systèmes</div>
+                <p class="description">
+                    Étudiant en <strong>BTS SIO SISR</strong>. Je ne me contente pas d'étudier l'informatique, je la pratique. De l'administration système sous <strong>Linux et Windows Server</strong> à l'assemblage de configurations <strong>hardware sur-mesure</strong>, j'aime comprendre ce qui se passe sous le capot et optimiser les performances de mes équipements.
+                </p>
                 
-                <div class="buttons">
-                    <a href="#profil" class="btn-pill">Profil</a>
-                    <a href="#certification" class="btn-pill">Certification</a>
-                    <a href="#contact" class="btn-pill">Contacter</a>
+                <div class="skills-grid">
+                    <span class="skill-tag">Administration Linux</span>
+                    <span class="skill-tag">Active Directory</span>
+                    <span class="skill-tag">Hardware & PC Custom</span>
+                    <span class="skill-tag">Réseaux</span>
+                    <span class="skill-tag">Esprit Tactique</span>
                 </div>
             </div>
-            
-            <div class="hero-image">
-                <div class="photo-circle">Photo à venir</div>
+
+            <div class="visual-content">
+                <div class="abstract-frame">
+                    <div class="frame-text">&lt; Zone pour Projets / Photo / Setup &gt;</div>
+                </div>
             </div>
+
         </div>
     </section>
 
